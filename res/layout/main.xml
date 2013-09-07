@@ -13,14 +13,14 @@
         />
     <Button
     android:id="@+id/shareButton"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textStyle="bold"
-    android:gravity="center"
+    android:layout_gravity="center_horizontal"
     android:layout_marginTop="30dp"
     android:visibility="invisible"
-    android:text="@string/share"
+    android:drawableTop="@drawable/panic"
     />
+   
     
 
 </LinearLayout>

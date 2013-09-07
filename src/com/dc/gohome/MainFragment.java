@@ -150,12 +150,13 @@ public class MainFragment extends Fragment {
 	        }
 
 	        Bundle postParams = new Bundle();
-	        //postParams.putString("name", "Facebook SDK for Android");
+	        postParams.putString("name", "My location is:");
 	        //postParams.putString("caption", "Build great social apps and get more installs.");
 	        //postParams.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
-	        //postParams.putString("link", "https://developers.facebook.com/android");
+	        postParams.putString("link", "https://maps.google.com/maps?q="+MainActivity.latitude+","+MainActivity.longitude);
 	       //postParams.putString("picture", "http://2.bp.blogspot.com/-7640A4_UZJ4/UMe6oIdEaFI/AAAAAAAABAM/-2XkrpwwJa0/s1600/man-law-beer-glass.jpg");
-	        postParams.putString("message", "Help me");
+	        postParams.putString("message", "Please walk me home.");
+	        
 
 	        Request.Callback callback= new Request.Callback() {
 	            public void onCompleted(Response response) {

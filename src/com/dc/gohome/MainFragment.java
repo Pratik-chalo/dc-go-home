@@ -33,9 +33,11 @@ public class MainFragment extends Fragment {
 	private UiLifecycleHelper uiHelper;
 	private Button shareButton;
 	
-	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions");
+	private static final List<String> PERMISSIONS = Arrays.asList("publish_actions","publish_stream", "manage_pages");
 	private static final String PENDING_PUBLISH_KEY = "pendingPublishReauthorization";
 	private boolean pendingPublishReauthorization = false;
+	
+	private static final String PAGE_ID = "161172667414895";
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -152,7 +154,7 @@ public class MainFragment extends Fragment {
 	        //postParams.putString("caption", "Build great social apps and get more installs.");
 	        //postParams.putString("description", "The Facebook SDK for Android makes it easier and faster to develop Facebook integrated Android apps.");
 	        //postParams.putString("link", "https://developers.facebook.com/android");
-	        postParams.putString("picture", "http://2.bp.blogspot.com/-7640A4_UZJ4/UMe6oIdEaFI/AAAAAAAABAM/-2XkrpwwJa0/s1600/man-law-beer-glass.jpg");
+	       //postParams.putString("picture", "http://2.bp.blogspot.com/-7640A4_UZJ4/UMe6oIdEaFI/AAAAAAAABAM/-2XkrpwwJa0/s1600/man-law-beer-glass.jpg");
 	        postParams.putString("message", "Help me");
 
 	        Request.Callback callback= new Request.Callback() {
@@ -183,7 +185,7 @@ public class MainFragment extends Fragment {
 	            }
 	        };
 
-	        Request request = new Request(session, "me/feed", postParams, 
+	        Request request = new Request(session, PAGE_ID+"/feed", postParams, 
 	                              HttpMethod.POST, callback);
 
 	        RequestAsyncTask task = new RequestAsyncTask(request);
